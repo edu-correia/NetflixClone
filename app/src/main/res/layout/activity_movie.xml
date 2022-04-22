@@ -1,111 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".MovieActivity">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbr_movie_activity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        android:background="@android:color/transparent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".MovieActivity">
 
-    <ImageView
-        android:id="@+id/img_movie_player"
-        android:src="@drawable/shadows"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintDimensionRatio="16:9"
-        android:scaleType="centerCrop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        <ImageView
+            android:id="@+id/img_movie_player"
+            android:src="@drawable/shadows"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
 
-    <ImageView
-        android:src="@drawable/ic_play_circle"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        app:layout_constraintTop_toTopOf="@id/img_movie_player"
-        app:layout_constraintBottom_toBottomOf="@id/img_movie_player"
-        app:layout_constraintStart_toStartOf="@id/img_movie_player"
-        app:layout_constraintEnd_toEndOf="@id/img_movie_player"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbr_movie_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_movie_title"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="22dp"
-        tools:text="Movie Name"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/img_movie_player"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/ic_play_circle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintTop_toTopOf="@id/img_movie_player"
+            app:layout_constraintBottom_toBottomOf="@id/img_movie_player"
+            app:layout_constraintStart_toStartOf="@id/img_movie_player"
+            app:layout_constraintEnd_toEndOf="@id/img_movie_player"/>
 
-    <TextView
-        android:id="@+id/txt_movie_desc"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/img_movie_player"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/lightGray"
-        android:maxLines="3"
-        android:ellipsize="end"
-        android:lineSpacingExtra="3sp"
-        android:textSize="14sp"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend dapibus metus, non porta risus venenatis in. Pellentesque a risus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in eros sed tellus eleifend ornare quis at tortor. Mauris et diam felis. Curabitur fringilla."/>
+        <TextView
+            android:id="@+id/txt_movie_title"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="22dp"
+            android:text="Movie Name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/img_movie_player"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/txt_movie_cast"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_movie_desc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@android:color/darker_gray"
-        android:maxLines="3"
-        android:ellipsize="end"
-        android:lineSpacingExtra="3sp"
-        android:textSize="14sp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend dapibus metus, non porta risus venenatis in. Pellentesque a risus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in eros sed tellus eleifend ornare quis at tortor. Mauris et diam felis. Curabitur fringilla."/>
+        <TextView
+            android:id="@+id/txt_movie_desc"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/img_movie_player"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/lightGray"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="3sp"
+            android:textSize="14sp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend dapibus metus, non porta risus venenatis in. Pellentesque a risus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in eros sed tellus eleifend ornare quis at tortor. Mauris et diam felis. Curabitur fringilla."/>
 
-    <TextView
-        android:id="@+id/txt_similar_options"
-        android:text="@string/similar_options"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/txt_movie_cast"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAllCaps="true"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_movie_cast"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_movie_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@android:color/darker_gray"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="3sp"
+            android:textSize="14sp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend dapibus metus, non porta risus venenatis in. Pellentesque a risus risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in eros sed tellus eleifend ornare quis at tortor. Mauris et diam felis. Curabitur fringilla."/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_similar_options"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_similar_options"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_similar_options"
+            android:text="@string/similar_options"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/txt_movie_cast"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAllCaps="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_similar_options"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_similar_options"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/similar_movie_item"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
